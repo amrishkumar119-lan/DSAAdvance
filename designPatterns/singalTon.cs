@@ -45,9 +45,10 @@ namespace DSAAdvance.designPatterns
 
 
 
-    public class program
+    // Renamed Main -> Demo. Call SingletonDemo.Run() from Program.cs.
+    public class SingletonDemo
     {
-        public static void Main()
+        public static void Run()
         {
             Thread thread = new Thread(() =>
             {
@@ -62,8 +63,6 @@ namespace DSAAdvance.designPatterns
 
             thread.Join();
             thread1.Join();
-            //singalTon obj = singalTon.GetInstance();
-            //singalTon obj1 = singalTon.GetInstance();
         }
     }
 }

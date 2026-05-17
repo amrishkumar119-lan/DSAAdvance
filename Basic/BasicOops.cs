@@ -36,12 +36,15 @@ namespace DSAAdvance.Basic
     {
        private static IF GetF;
 
-        public static void Main()
+        // Renamed from Main to Demo. Note: GetF is null here - this demo currently
+        // throws NullReferenceException; intent was to demonstrate interface usage.
+        // Fix by assigning GetF = new a(); before calling.
+        public static void Demo()
         {
+            GetF = new a();
             GetF.Show();
             GetF.Hide();
             GetF.Get();
-          
         }
     }
 }

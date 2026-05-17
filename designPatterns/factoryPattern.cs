@@ -47,7 +47,8 @@ namespace DSAAdvance.designPatterns
 
     public class factoryPattern
     {
-        public static void Main()
+        // Renamed from Main to Demo. Call from Program.cs.
+        public static void Demo()
         {
             INotifiction notifiction = NotificationFactory.create("email");
             notifiction.send();

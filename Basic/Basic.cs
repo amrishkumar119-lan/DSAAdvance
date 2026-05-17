@@ -80,8 +80,9 @@ namespace DSAAdvance.Basic
     public class Basic
     {
 
-
-        public static void Main(string[] args)
+        // Renamed from Main to Demo to allow a single project entry point.
+        // Call Basic.Demo() from Program.cs to run this demo.
+        public static void Demo()
         {
             int i = 123;
             char[] str = i.ToString().ToCharArray();
