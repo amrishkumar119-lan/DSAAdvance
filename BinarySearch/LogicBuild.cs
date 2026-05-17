@@ -12,6 +12,9 @@ namespace DSAAdvance.BinarySearch
     {
 
 
+        // SPOJ AGGRCOW / GFG - Aggressive Cows
+        // Place k cows in stalls so minimum distance between any two is maximized.
+        // Approach: Binary search on the answer.
         public int AggressiveCows(int[] nums, int k)
         {
             int low = 0, high = nums.Max();
@@ -45,6 +48,9 @@ namespace DSAAdvance.BinarySearch
             return count;
         }
 
+        // GFG - Book Allocation Problem / Allocate Minimum Pages
+        // Distribute books to m students minimizing the maximum pages any student reads.
+        // Approach: Binary search on the answer.
         public int findPages(List<int> nums, int m)
         {
             long low = nums.Max(); long high = nums.Sum(o => o);
@@ -84,6 +90,7 @@ namespace DSAAdvance.BinarySearch
 
         
 
+        // LeetCode #1283 - Find the Smallest Divisor Given a Threshold
         public int SmallestDivisor(int[] nums, int limit)
         {
             ArrayList obj = new ArrayList();
@@ -121,6 +128,7 @@ namespace DSAAdvance.BinarySearch
             return count <= limit;
         }
 
+        // GFG - Find Nth Root of a Number (find r such that r^N = M)
         public int NthRoot(int N, int M)
         {
             int low = 0, high = M;
@@ -151,6 +159,7 @@ namespace DSAAdvance.BinarySearch
             return -1;
         }
 
+        // LeetCode #69 - Sqrt(x) / Floor of Square Root
         public int floorSqrt(int n)
         {
             int left = 1, right = n;
@@ -170,6 +179,7 @@ namespace DSAAdvance.BinarySearch
             return right;
         }
 
+        // LeetCode #1482 - Minimum Number of Days to Make m Bouquets (Rose Garden)
         public int RoseGarden(List<int> nums, int k, int m)
         {
 
@@ -216,6 +226,7 @@ namespace DSAAdvance.BinarySearch
             return possible >= m;
         }
 
+        // LeetCode #1283 - Find the Smallest Divisor (alternate approach)
         public int FindSDivisor(int[] nums,int limit)
         {
             int low=1,high=nums.Max();
@@ -234,6 +245,8 @@ namespace DSAAdvance.BinarySearch
             return low;
         }
 
+        // LeetCode #875 - Koko Eating Bananas
+        // Find minimum eating speed k such that Koko can eat all bananas within h hours.
         public int MinEatingSpeed(int[] piles, int h)
         {
             int low = 1, high = piles.Max();
@@ -258,6 +271,7 @@ namespace DSAAdvance.BinarySearch
             return low;
         }
 
+        // LeetCode #875 - Koko Eating Bananas (List version)
         public int MinimumRateToEatBananas(List<int> nums, int h)
         {
             int low = 1, high = findMax(nums);
@@ -497,6 +511,7 @@ namespace DSAAdvance.BinarySearch
         //}
 
 
+        // LeetCode #540 - Single Element in a Sorted Array
         public int SingleNonDuplicate(int[] nums)
         {
             int k = nums.Max();
@@ -522,6 +537,7 @@ namespace DSAAdvance.BinarySearch
 
        
 
+        // GFG - Find Rotation Count in a Rotated Sorted Array
         public int findKRotation(int[] nums)
         {
             int low = 0, high = nums.Length - 1;
@@ -601,6 +617,7 @@ namespace DSAAdvance.BinarySearch
         //}
 
 
+        // LeetCode #81 - Search in Rotated Sorted Array II (with duplicates)
         public bool searchInARotatedSortedArrayII(int[] nums, int k)
         {
             int low = 0, high = nums.Length - 1;
@@ -635,6 +652,7 @@ namespace DSAAdvance.BinarySearch
             return false;
         }
 
+        // GFG - Floor and Ceil in a Sorted Array
         public int[] GetFloorAndCeil(int[] nums, int x)
         {
             int[] arr = { -1, -1 };

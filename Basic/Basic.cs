@@ -42,6 +42,9 @@ namespace DSAAdvance.Basic
     //}
 
     
+    // OOP Concept: Shallow Copy vs Deep Copy
+    // - Shallow copy: copies value types, but reference type fields share the same object.
+    // - Deep copy: creates new copies of reference type fields too.
     public  class info
     {
         public int id;
@@ -57,11 +60,13 @@ namespace DSAAdvance.Basic
         public string Name;
         public info info;
 
+        // Shallow copy - 'info' reference is shared between original and copy.
         public person shollCopy()
         {
             return (person)MemberwiseClone();
         }
 
+        // Deep copy - new 'info' object so changes don't affect the original.
         public person deepCopy()
         {
             person person = (person)MemberwiseClone();
@@ -71,9 +76,10 @@ namespace DSAAdvance.Basic
 
     }
 
+    // Demo of shallow copy behaviour - observe how p1.info.id and p2.info.id are linked.
     public class Basic
     {
-        
+
 
         public static void Main(string[] args)
         {

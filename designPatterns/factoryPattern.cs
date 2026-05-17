@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 namespace DSAAdvance.designPatterns
 {
 
+    // Design Pattern: Factory Pattern (Creational)
+    // Purpose: Create objects without exposing the instantiation logic to the client.
+    //          The caller asks for an "email" or "sms" notification and gets the right
+    //          implementation back, without knowing the concrete class.
     public interface INotifiction
     {
         void send();

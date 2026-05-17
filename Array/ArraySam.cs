@@ -9,23 +9,27 @@ namespace DSAAdvance.Array
 {
     public class ArraySam
     {
-        //public int[] AddTwo(int[] nums,int Target)
+        // LeetCode #1 - Two Sum (Brute Force O(n^2))
+        //public int[] TwoSum(int[] nums, int target)
         //{
-        //    var find =new int[2];
-        //    for (int i = 0; i < nums.Length; i++) { 
-        //         int flt = Target - nums[i];
+        //    var find = new int[2];
+        //    for (int i = 0; i < nums.Length; i++) {
+        //        int complement = target - nums[i];
         //        for (int j = i + 1; j < nums.Length; j++) {
-        //            if (nums[j] == flt) {
+        //            if (nums[j] == complement) {
         //                find[0] = i;
         //                find[1] = j;
-        //                }
+        //            }
         //        }
         //    }
         //    return find;
         //}
 
 
-        public int[] AddTwo(int[] nums, int Target)
+        // LeetCode #1 - Two Sum
+        // Given nums[] and target, return indices of two numbers that add up to target.
+        // Approach: HashMap, Time O(n), Space O(n)
+        public int[] TwoSum(int[] nums, int target)
         {
             Dictionary<int, int> map = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
@@ -34,27 +38,31 @@ namespace DSAAdvance.Array
             }
             for (int i = 0; i < nums.Length; i++)
             {
-                int compt = Target - nums[i];
-                if (map.ContainsKey(compt) && map[compt] != i)
+                int complement = target - nums[i];
+                if (map.ContainsKey(complement) && map[complement] != i)
                 {
-                    return new int[] { i, map[compt] };
+                    return new int[] { i, map[complement] };
                 }
 
             }
             return new int[] { };
         }
         
+        // Scratchpad / driver method.
+        // Uncomment a block below to test that problem.
         public static void Main()
         {
+            // --- LeetCode #1 - Two Sum ---
             //ArraySam arraySam = new ArraySam();
             //int[] nums = { 2, 5, 10, 5, -2 };
             //int target = 3;
-            //int[] ints=  arraySam.AddTwo(nums, target);
-            //for (int i = 0; i < ints.Length; i++) { 
-            //  Console.WriteLine(ints[i]);
+            //int[] ints = arraySam.TwoSum(nums, target);
+            //for (int i = 0; i < ints.Length; i++) {
+            //    Console.WriteLine(ints[i]);
             //}
             //Console.ReadLine();
 
+            // --- Insert element at index (manual shift) ---
             //List<int> nums = new List<int>() { 1,2,3,5,6};//{1,2,10,3,5,6}
             //nums.Insert(2, 10);
 
@@ -63,9 +71,9 @@ namespace DSAAdvance.Array
             //int index = 3;
 
             //int[] NewArray = new int[arr.Length+1];
-            //NewArray[index] = insertArry; 
-            //for (int i = 0; i < index; i++) 
-            //{ 
+            //NewArray[index] = insertArry;
+            //for (int i = 0; i < index; i++)
+            //{
             //    NewArray[i] = arr[i];
             //}
 
@@ -79,22 +87,24 @@ namespace DSAAdvance.Array
             //    Console.WriteLine(item);
             //}
 
+            // --- LeetCode #344 - Reverse Array (in-place swap) ---
             //int[] ints = { 1, 2, 3, 4, 5 };
             //bool target=true;
             //for (int i = 0; i < ints.Length-1; i++)
             //{
-            //    int compt = ints[i];
-            //    ints[i] =ints[ints.Length-1-i];
-            //    ints[ints.Length-1-i]=compt;
+            //    int temp = ints[i];
+            //    ints[i] = ints[ints.Length-1-i];
+            //    ints[ints.Length-1-i] = temp;
             //}
             //for(int i = 0;i < ints.Length; i++)
             //{
             //    Console.WriteLine(ints[i]);
             //}
 
+            // --- Find maximum element ---
             //int[] ints = { -4, -3, 0, 1, -8 };
             //int Target = 0;
-            //for (int i = 0; i<ints.Length-1; i++) 
+            //for (int i = 0; i<ints.Length-1; i++)
             //{
             //    if (ints[i] < ints[i + 1])
             //    {
@@ -105,6 +115,7 @@ namespace DSAAdvance.Array
             //Console.WriteLine(Target);
 
 
+            // --- LeetCode #14 - Longest Common Prefix ---
             //string[] arr = { "flower", "flow", "flight" };
             //string str = string.Empty;
             //string fl = arr[0];
@@ -122,22 +133,25 @@ namespace DSAAdvance.Array
             //}
             //Console.WriteLine(fl);
 
+            // --- Rotate array left by 1 ---
             ///int[] num = { 8, 8, 7, 6, 5 };
             //int[] num = { 8, 10, 7, 6, 5 };
 
             //int[] array = { 1, 2, 3, 4, 5 };
             //int f = array[0];
-            //for (int i = 0; i < array.Length-1; i++) 
+            //for (int i = 0; i < array.Length-1; i++)
             //{
             //    array[i] = array[i+1];
             //}
             //array[4] = f;
-            //for (int i = 0; i < array.Length; i++) 
+            //for (int i = 0; i < array.Length; i++)
             //{
             //    Console.WriteLine(array[i]);
             //}
+
+            // --- LeetCode #26 - Remove Duplicates from Sorted Array (HashSet approach) ---
             int[] array = {1, 1, 1, 1, 2, 3, 4, 4, 5, 8, 8, 8, 8, 8, 9, 9, 9, 10, 10, 10, 12, 13, 13, 13, 13, 13, 13, 14, 14, 14, 15, 15, 16, 16, 16, 17, 17, 17, 18, 18, 19, 20, 20, 21, 21, 22, 22, 23, 24, 24, 24, 25, 25, 28, 28, 28, 29, 29, 29, 29, 31, 32, 32, 32, 33, 33, 33, 35, 36, 37, 37, 37, 37, 39, 40, 40, 40, 40, 41, 42, 42, 42, 43, 43, 43, 43, 43, 44, 45, 45, 45, 45, 45, 46, 47, 48, 48, 49, 49, 50};
-           
+
             int up = 0;
             //int[] newarray=new int[array.Length];
             //for (int i = 0; i < array.Length; i++)

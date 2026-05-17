@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DSAAdvance.designPatterns
 {
+    // Design Pattern: Singleton Pattern (Creational)
+    // Purpose: Ensure a class has only ONE instance, with a global access point.
+    // This version is thread-safe using double-checked locking — verify with the
+    // two-thread test in Main() that only "Call 1" prints (constructor runs once).
     public class singalTon
     {
         public static int count;

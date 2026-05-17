@@ -11,6 +11,8 @@ namespace DSAAdvance.Array
     public class BasicArray
     {
 
+        // LeetCode #540 - Single Element in a Sorted Array
+        // Every element appears twice except one. Find the single one. Time O(log n).
         public int SingleNonDuplicate(int[] nums)
         {
             int n = nums.Length; // Size of the array.
@@ -50,6 +52,7 @@ namespace DSAAdvance.Array
             return -1;
         }
 
+        // LeetCode #34 - Find First and Last Position of Element in Sorted Array
         public int[] SearchRange(int[] nums, int target)
         {
             int k=int.MinValue;
@@ -72,6 +75,7 @@ namespace DSAAdvance.Array
 
         int cnt = 0;
 
+        // Print numbers from n down to i using recursion (logic-building exercise)
         public void print(int i,int n)
         {
             if (i>n) return;
@@ -79,6 +83,7 @@ namespace DSAAdvance.Array
             Console.WriteLine(i);
         }
 
+        // Classic Binary Search (recursive)
         public int search(int[] array,int high,int low,int target)
         {
             if (high<low)
@@ -92,6 +97,7 @@ namespace DSAAdvance.Array
             else return search(array, high, mid + 1, target);
         }
 
+        // Insertion Sort - O(n^2) time
         public int[] InsertionSort(int[] nums)
         {
             for (int i = 1; i < nums.Length - 1; i++)
@@ -109,6 +115,7 @@ namespace DSAAdvance.Array
             return nums;
         }
 
+        // Merge Sort driver - O(n log n)
         public List<int> margeS(List<int> nums)
         {
             int n=nums.Count;
@@ -116,6 +123,7 @@ namespace DSAAdvance.Array
             return nums;
         }
 
+        // GFG - Number of Inversions in an array (using merge sort)
         public long NumberOfInversions(List<int> nums)
         {
             int n = nums.Count;
@@ -173,6 +181,7 @@ namespace DSAAdvance.Array
         }
 
 
+        // LeetCode #54 - Spiral Matrix (int[][] version)
         public static IList<int> SpiralOrder2(int[][] matrix)
         {
             List<int> Lst = new List<int>();
@@ -210,6 +219,8 @@ namespace DSAAdvance.Array
             return Lst;
         }
 
+        // LeetCode #15 - 3Sum
+        // Find all unique triplets that sum to 0. Approach: sort + two pointers. O(n^2).
         public static IList<IList<int>> ThreeSum(int[] nums)
         {
            System.Array.Sort(nums);
@@ -240,6 +251,7 @@ namespace DSAAdvance.Array
             }
             return lst;
         }
+        // LeetCode #7 - Reverse Integer
         public static int Reverse(int x)
         {
             bool isTrue = x < 0;
@@ -257,6 +269,7 @@ namespace DSAAdvance.Array
             return (isTrue ? - (int)kk : (int)kk);
         }
 
+        // LeetCode #9 - Palindrome Number
         public static bool IsPalindrome(int x)
         {
             string d = x.ToString();
@@ -302,6 +315,8 @@ namespace DSAAdvance.Array
         //    return list1;
         //}
 
+        // LeetCode #18 - 4Sum
+        // Find all unique quadruplets that sum to target. Sort + two pointers. O(n^3).
         public static IList<IList<int>> FourSum(int[] nums, int target)
         {
             List<IList<int>> lst = new List<IList<int>>();
@@ -337,6 +352,8 @@ namespace DSAAdvance.Array
             return lst;
         }
 
+        // LeetCode #75 - Sort Colors (Dutch National Flag)
+        // Sort array of 0s, 1s, 2s in-place. O(n) time, O(1) space.
         public static void SortArrayUsing0s1s2s(int[] nums)
         {
             int m = Math.Abs(nums.Length);
@@ -391,6 +408,7 @@ namespace DSAAdvance.Array
 
         }
 
+        // LeetCode #229 - Majority Element II (n/3 times) - Boyer-Moore Voting
         public static List<int> MajorityElementTwo(List<int> nums)
         {
             List<int> lst = new List<int>();
@@ -426,6 +444,7 @@ namespace DSAAdvance.Array
             return lst;
         }
 
+        // LeetCode #54 - Spiral Matrix (List<List<int>> version - earlier attempt)
         public static List<int> SpiralOrder1(List<List<int>> matrix)
         {
             List<int> Lst = new List<int>();
@@ -465,6 +484,7 @@ namespace DSAAdvance.Array
         }
 
 
+        // GFG - Second Largest Element in an Array
         public static int SecondLargestElement(List<int> nums)
         {
 
@@ -481,6 +501,7 @@ namespace DSAAdvance.Array
             return -1;
         }
 
+        // LeetCode #485 - Max Consecutive Ones
         public static int FindMaxConsecutiveOnes(int[] nums)
         {
             int k = 0, temp = 0;
@@ -507,6 +528,7 @@ namespace DSAAdvance.Array
             return temp;
         }
 
+        // LeetCode #189 - Rotate Array by k positions
         public static void rotateArray(List<int> nums, int k)
         {
             int d = k % nums.Count;
@@ -529,6 +551,7 @@ namespace DSAAdvance.Array
 
         }
 
+        // LeetCode #26 - Remove Duplicates from Sorted Array
         public static int removeDuplicates(List<int> nums)
         {
             int k = 0;
@@ -545,6 +568,7 @@ namespace DSAAdvance.Array
             return nums.Count;
         }
 
+        // GFG - Union of Two Sorted Arrays
         public static List<int> UnionArray(List<int> nums1, List<int> nums2)
         {
             List<int> lst = new List<int>();
@@ -576,6 +600,7 @@ namespace DSAAdvance.Array
 
         }
 
+        // LeetCode #1995 - Count Special Quadruplets (a + b + c = d)
         public static int CountQuadruplets(int[] nums)
         {
             int s = 0;
@@ -598,6 +623,7 @@ namespace DSAAdvance.Array
             return s;
         }
 
+        // LeetCode #169 - Majority Element (n/2 times) - Boyer-Moore Voting
         public static int MajorityElement(List<int> nums)
         {
             int count = 0, Element = 0;
@@ -620,6 +646,7 @@ namespace DSAAdvance.Array
             return Element;
         }
 
+        // GFG - Find Missing and Repeating Numbers in array 1..n
         public static List<int> FindMissingRepeatingNumbers(List<int> nums)
         {
             //List<int> lst = new List<int>();
@@ -758,6 +785,7 @@ namespace DSAAdvance.Array
 
 
 
+        // LeetCode #136 - Single Number (every element twice except one)
         public static int SingleNumber(int[] nums)
         {
             for (int i = 0; i < nums.Length - 1; i += 2)
@@ -772,6 +800,7 @@ namespace DSAAdvance.Array
         }
 
 
+        // LeetCode #349 - Intersection of Two Arrays
         public static int[] IntersectionArray(int[] nums1, int[] nums2)
         {
             List<int> lst = new List<int>();
@@ -788,6 +817,7 @@ namespace DSAAdvance.Array
             return lst.ToArray();
         }
 
+        // GFG - Leaders in an Array (element greater than all to its right)
         public static List<int> Leaders(List<int> nums)
         {
             List<int> lst = new List<int>();
@@ -806,6 +836,7 @@ namespace DSAAdvance.Array
         }
 
 
+        // Compute nCk (binomial coefficient) - used in Pascal's Triangle problems
         public static int skk(int r, int k)
         {
 
@@ -819,6 +850,7 @@ namespace DSAAdvance.Array
         }
 
 
+        // LeetCode #54 - Spiral Matrix (cleaned-up version)
         public static List<int> SpiralOrder(List<List<int>> matrix)
         {
             List<int> lst = new List<int>();
@@ -856,6 +888,7 @@ namespace DSAAdvance.Array
             return lst;
         }
 
+        // LeetCode #75 - Sort Colors (List version, Dutch National Flag)
         public void SortZeroOneTwo(List<int> nums)
         {
             int low = 0, mid = 0, high = nums.Count - 1;
@@ -909,6 +942,7 @@ namespace DSAAdvance.Array
         //    }
         //}
 
+        // LeetCode #48 - Rotate Image (rotate matrix by 90 degrees)
         public static void RotateMatrix(int[][] matrix)
         {
             int R = matrix.Length, C = matrix[0].Length;
@@ -940,15 +974,16 @@ namespace DSAAdvance.Array
             }
         }
 
+        // LeetCode #1 - Two Sum (Brute Force version, O(n^2))
         public List<int> TwoSum(List<int> nums, int target)
         {
             List<int> lst = new List<int>();
             for (int i = 0; i < nums.Count; i++)
             {
-                int comp = target - nums[i];
+                int complement = target - nums[i];
                 for (int j = i + 1; j < nums.Count; j++)
                 {
-                    if (nums[j] == comp)
+                    if (nums[j] == complement)
                     {
                         lst.Add(i);
                         lst.Add(j);
@@ -960,6 +995,7 @@ namespace DSAAdvance.Array
         }
 
 
+        // LeetCode #229 - Majority Element II (verified count version)
         public static IList<int> MajorityElement2(List<int> nums)
         {
             List<int> lst = new List<int>();

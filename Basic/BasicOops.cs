@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DSAAdvance.Basic
 {
+    // OOP Concept: Interface Implementation
+    // An interface defines a contract; the class implementing it must define all methods.
     public interface IF
     {
         public void Show();
